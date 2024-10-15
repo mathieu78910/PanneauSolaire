@@ -4,10 +4,22 @@
     {
         public App()
         {
-            InitializeComponent();
-            
             MainPage = new AppShell();
-            
+            AddGeoLocationButton();
+        }
+
+        private void AddGeoLocationButton()
+        {
+         
+            Button geoButton = new Button
+            {
+                Text = "Géolocalisation"
+            };
+
+            geoButton.Clicked += async (sender, e) =>
+            {
+                await Shell.Current.GoToAsync("//Géolocalisation");
+            };
         }
     }
 }
