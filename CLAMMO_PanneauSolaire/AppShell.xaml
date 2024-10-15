@@ -8,8 +8,7 @@
     Title="CLAMMO_PanneauSolaire">
 
     <ShellContent
-        Title="Home"
+        Title="Sensors Result"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
 </Shell>

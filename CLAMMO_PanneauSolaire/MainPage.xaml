@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CLAMMO_PanneauSolaire.MainPage"
-             BackgroundColor="#F0F0F5">
-
+             BackgroundColor="#282b30">
     <ScrollView>
         <VerticalStackLayout
             Padding="40,20"
             Spacing="35"
             VerticalOptions="Center">
 
-            <Image
-                Source="appicon.png"
-                HeightRequest="150"
-                Aspect="AspectFit"
-                HorizontalOptions="Center" />
+            <Label
+                Text="Présentation application panneau solaire"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Start" />
 
             <Button
                 Text="Géolocalisation"
@@ -36,7 +36,6 @@
                 HorizontalOptions="Fill"
                 Clicked="OnCompassClicked" />
 
-  
             <Button
                 Text="Inclinaison"
                 BackgroundColor="#03A9F4"
@@ -47,13 +46,6 @@
                 HorizontalOptions="Fill"
                 Clicked="OnInclinationClicked" />
 
-            <Label
-                x:Name="CompassLabel"
-                Text="Compass: Not available"
-                FontSize="24"
-                HorizontalOptions="Center"
-                TextColor="Black" />
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
