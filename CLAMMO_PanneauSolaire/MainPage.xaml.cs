@@ -40,7 +40,7 @@
                 {
                     var data = e.Reading;
                     double heading = Math.Round(data.HeadingMagneticNorth, 0);
-                    CompassLabel.Text = $"Heading: {heading} degrees";
+                    CompassLabel.Text = $"Direction: {heading}°";
                 };
                 Compass.Start(SensorSpeed.UI);
                 Console.WriteLine("Compass started.");
@@ -64,11 +64,9 @@
                     // Arrondir l'inclinaison 
                     double inclinationRounded = Math.Round(inclination, 0);
                     if (inclinationRounded==-0)
-                        InclinationLabel.Text="Inclination: 0 degré";
-                    else if(inclinationRounded==1 | inclinationRounded==-1)
-                        InclinationLabel.Text = $"Inclination: {inclinationRounded} degré";
+                        InclinationLabel.Text="Inclination: 0°";
                     else
-                        InclinationLabel.Text = $"Inclination: {inclinationRounded} degrés";
+                        InclinationLabel.Text = $"Inclination: {inclinationRounded}°";
                 };
                 Accelerometer.Start(SensorSpeed.UI);
                 Console.WriteLine("Accelerometer started.");
