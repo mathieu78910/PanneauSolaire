@@ -6,31 +6,32 @@
         {
             InitializeComponent();
         }
-        
-        private void OnGeolocationClicked(object sender, EventArgs e)
+
+        private async void OnGeolocationClicked(object sender, EventArgs e)
         {
-            /*
             try
             {
-                var location = Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Best));
+                var location = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Best));
                 if (location != null)
                 {
-                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                    double latitude = Math.Round(location.Latitude, 2);
+                    double longitude = Math.Round(location.Longitude, 2);
+                    double? altitude = location.Altitude.HasValue ? Math.Round(location.Altitude.Value, 2) : (double?)null;
+
+                    GeolocationLabel.Text = $"Latitude: {latitude}, Longitude: {longitude}, Altitude: {altitude}";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unable to get location: {ex.Message}");
             }
-            */
-            
         }
-        
+
         private void OnCompassClicked(object sender, EventArgs e)
         {
             if (Compass.IsMonitoring)
             {
-                Compass.Stop(); 
+                Compass.Stop();
                 Console.WriteLine("Compass stopped.");
             }
             else
@@ -38,20 +39,19 @@
                 Compass.ReadingChanged += (s, e) =>
                 {
                     var data = e.Reading;
-                    double heading = Math.Round(data.HeadingMagneticNorth, 2);
+                    double heading = Math.Round(data.HeadingMagneticNorth, 0);
                     CompassLabel.Text = $"Heading: {heading} degrees";
                 };
-                Compass.Start(SensorSpeed.UI); 
+                Compass.Start(SensorSpeed.UI);
                 Console.WriteLine("Compass started.");
             }
-
         }
 
         private void OnInclinationClicked(object sender, EventArgs e)
         {
             if (Accelerometer.IsMonitoring)
             {
-                Accelerometer.Stop(); 
+                Accelerometer.Stop();
                 Console.WriteLine("Accelerometer stopped.");
             }
             else
@@ -61,15 +61,19 @@
                     var data = e.Reading;
 
                     double inclination = Math.Atan2(data.Acceleration.Y, data.Acceleration.Z) * (180 / Math.PI);
-                    // Arrondir l'inclinaison au centième
-                    double inclinationRounded = Math.Round(inclination, 2);
-                    InclinationLabel.Text = $"Inclination: {inclinationRounded} degrees";
+                    // Arrondir l'inclinaison 
+                    double inclinationRounded = Math.Round(inclination, 0);
+                    if (inclinationRounded==-0)
+                        InclinationLabel.Text="Inclination: 0 degré";
+                    else if(inclinationRounded==1 | inclinationRounded==-1)
+                        InclinationLabel.Text = $"Inclination: {inclinationRounded} degré";
+                    else
+                        InclinationLabel.Text = $"Inclination: {inclinationRounded} degrés";
                 };
-                Accelerometer.Start(SensorSpeed.UI); 
+                Accelerometer.Start(SensorSpeed.UI);
                 Console.WriteLine("Accelerometer started.");
             }
         }
-
     }
 
 }

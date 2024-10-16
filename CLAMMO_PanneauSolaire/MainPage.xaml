@@ -15,7 +15,7 @@
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 VerticalOptions="Start" />
-
+            <Label x:Name="GeolocationLabel" Text="Géolocalisation : Non disponible" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
             <Button
                 Text="Géolocalisation"
                 BackgroundColor="#FFDD57"
