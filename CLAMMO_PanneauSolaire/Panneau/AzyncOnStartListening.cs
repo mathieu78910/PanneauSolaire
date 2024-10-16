@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.Maui.Devices.Sensors; 
-
-namespace CLAMMO_PanneauSolaire.Panneau
+﻿namespace CLAMMO_PanneauSolaire.Panneau
 {
     class AzyncOnStartListening
     {

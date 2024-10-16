@@ -1,7 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using System;
-
-namespace CLAMMO_PanneauSolaire
+﻿namespace CLAMMO_PanneauSolaire
 {
     public partial class InclinationPage : ContentPage
     {

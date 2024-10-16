@@ -63,8 +63,8 @@
                     double inclination = Math.Atan2(data.Acceleration.Y, data.Acceleration.Z) * (180 / Math.PI);
                     // Arrondir l'inclinaison 
                     double inclinationRounded = Math.Round(inclination, 0);
-                    if (inclinationRounded==-0)
-                        InclinationLabel.Text="Inclination: 0°";
+                    if (inclinationRounded == -0)
+                        InclinationLabel.Text = "Inclination: 0°";
                     else
                         InclinationLabel.Text = $"Inclination: {inclinationRounded}°";
                 };

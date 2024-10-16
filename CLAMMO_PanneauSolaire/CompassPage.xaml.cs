@@ -1,7 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-/*using Microsoft.Maui.Essentials;*/
-using System;
-
+﻿/*using Microsoft.Maui.Essentials;*/
 namespace CLAMMO_PanneauSolaire
 {
     public partial class CompassPage : ContentPage

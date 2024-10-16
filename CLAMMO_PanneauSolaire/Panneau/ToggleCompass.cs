@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.Maui.Devices.Sensors; 
-using Microsoft.Maui.Graphics; 
-
-namespace CLAMMO_PanneauSolaire.Panneau
+﻿namespace CLAMMO_PanneauSolaire.Panneau
 {
     public class CompassService
     {
@@ -37,9 +33,9 @@ namespace CLAMMO_PanneauSolaire.Panneau
 
         private void Compass_ReadingChanged(object sender, CompassChangedEventArgs e)
         {
-            
+
             CompassLabel.TextColor = Colors.Green;
-            CompassLabel.Text = $"Compass: {e.Reading.HeadingMagneticNorth:F1}°"; 
+            CompassLabel.Text = $"Compass: {e.Reading.HeadingMagneticNorth:F1}°";
         }
     }
 }

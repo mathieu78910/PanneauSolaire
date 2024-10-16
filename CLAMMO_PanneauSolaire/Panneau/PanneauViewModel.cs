@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-//using Microsoft.Maui.Essentials;
+﻿//using Microsoft.Maui.Essentials;
 
 namespace CLAMMO_PanneauSolaire.Position
 {

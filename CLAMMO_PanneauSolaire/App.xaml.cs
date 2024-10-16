@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using Plugin.Maui.Audio;  
-using System;
+﻿using Plugin.Maui.Audio;
 
 namespace CLAMMO_PanneauSolaire
 {
@@ -53,7 +51,7 @@ namespace CLAMMO_PanneauSolaire
                 await Shell.Current.GoToAsync("//GeolocationPage");
             };
 
-            
+
         }
     }
 }

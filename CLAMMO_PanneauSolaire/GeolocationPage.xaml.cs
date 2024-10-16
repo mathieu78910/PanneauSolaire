@@ -1,7 +1,4 @@
 ﻿using CLAMMO_PanneauSolaire.Panneau;
-using Microsoft.Maui.Controls;
-using System;
-using System.Threading.Tasks;
 
 namespace CLAMMO_PanneauSolaire
 {
