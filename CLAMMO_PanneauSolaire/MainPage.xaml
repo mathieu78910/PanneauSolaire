@@ -26,6 +26,13 @@
                 HorizontalOptions="Fill"
                 Clicked="OnGeolocationClicked" />
             <Label x:Name="CompassLabel" Text="Compas : Non disponible" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <Image 
+                x:Name="CompassImage"
+                Source="Resources/Images/compass"
+                   WidthRequest="200"
+                   HeightRequest="200"
+                   Aspect="AspectFit"
+                   Rotation="90"/>
             <Button
                 Text="Compas"
                 BackgroundColor="#4CAF50"

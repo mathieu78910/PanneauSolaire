@@ -40,7 +40,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiAppIcon Include="Resources\AppIcon\erwan.png" />
+		<MauiAppIcon Include="Resources\AppIcon\Test.jpg" />
 		
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#1e2124" BaseSize="64,64" />
