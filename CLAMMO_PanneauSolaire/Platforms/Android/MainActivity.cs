@@ -12,6 +12,9 @@ namespace CLAMMO_PanneauSolaire
         {
             base.OnCreate(savedInstanceState);
 
+            // Configure la couleur de la barre de statut pour Android
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#000000")); // Remplace avec la couleur que tu veux
+
             // Vérifie si la permission d'accès à la localisation a été accordée
             if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
             {

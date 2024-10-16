@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>CLAMMO_PanneauSolaire</ApplicationTitle>
+		<ApplicationTitle>PanneauSolaire</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.clammo_panneausolaire</ApplicationId>
@@ -40,9 +40,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-
+		
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#1e2124" BaseSize="64,64" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -83,6 +83,17 @@
 	  <MauiXaml Update="GeolocationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\AppIcon\appicon.png" />
+	  <None Remove="Resources\AppIcon\appiconfg.png" />
+	  <None Remove="Resources\AppIcon\appicon.svg" />
+	  <None Remove="Resources\Styles\splash.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\AppIcon\" />
 	</ItemGroup>
 
 </Project>
