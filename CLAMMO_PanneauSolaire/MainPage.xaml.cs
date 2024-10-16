@@ -12,7 +12,7 @@
             /*
             try
             {
-                var location = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Best));
+                var location = Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Best));
                 if (location != null)
                 {
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
@@ -23,6 +23,7 @@
                 Console.WriteLine($"Unable to get location: {ex.Message}");
             }
             */
+            
         }
         
         private void OnCompassClicked(object sender, EventArgs e)
@@ -37,7 +38,8 @@
                 Compass.ReadingChanged += (s, e) =>
                 {
                     var data = e.Reading;
-                    Console.WriteLine($"Heading: {data.HeadingMagneticNorth} degrees");
+                    double heading = Math.Round(data.HeadingMagneticNorth, 2);
+                    CompassLabel.Text = $"Heading: {heading} degrees";
                 };
                 Compass.Start(SensorSpeed.UI); 
                 Console.WriteLine("Compass started.");
@@ -57,9 +59,11 @@
                 Accelerometer.ReadingChanged += (s, e) =>
                 {
                     var data = e.Reading;
-                    
+
                     double inclination = Math.Atan2(data.Acceleration.Y, data.Acceleration.Z) * (180 / Math.PI);
-                    Console.WriteLine($"Inclination: {inclination} degrees");
+                    // Arrondir l'inclinaison au centième
+                    double inclinationRounded = Math.Round(inclination, 2);
+                    InclinationLabel.Text = $"Inclination: {inclinationRounded} degrees";
                 };
                 Accelerometer.Start(SensorSpeed.UI); 
                 Console.WriteLine("Accelerometer started.");

@@ -25,7 +25,7 @@
                 HeightRequest="50"
                 HorizontalOptions="Fill"
                 Clicked="OnGeolocationClicked" />
-
+            <Label x:Name="CompassLabel" Text="Compas : Non disponible" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
             <Button
                 Text="Compas"
                 BackgroundColor="#4CAF50"
@@ -35,7 +35,7 @@
                 HeightRequest="50"
                 HorizontalOptions="Fill"
                 Clicked="OnCompassClicked" />
-
+            <Label x:Name="InclinationLabel" Text="Inclinaison : Non disponible" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
             <Button
                 Text="Inclinaison"
                 BackgroundColor="#03A9F4"
