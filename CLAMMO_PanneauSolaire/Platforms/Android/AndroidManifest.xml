@@ -10,4 +10,5 @@
 	<uses-permission android:name="android.permission.ACCESS_BLOBS_ACROSS_USERS" />
 	<uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
 	<uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+	<uses-permission android:name="android.permission.BODY_SENSORS" />
 </manifest>

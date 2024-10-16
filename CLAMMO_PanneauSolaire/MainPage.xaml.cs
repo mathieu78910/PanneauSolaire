@@ -65,6 +65,7 @@
                 Console.WriteLine("Accelerometer started.");
             }
         }
+
     }
 
 }

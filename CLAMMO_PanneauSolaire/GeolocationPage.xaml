@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CLAMMO_PanneauSolaire.GeolocationPage"
+             Title="Géolocalisation"
+             BackgroundColor="#282b30">
+    <StackLayout Padding="20">
+        <Label Text="Géolocalisation en temps réel"
+               FontSize="22"
+               HorizontalOptions="Center"
+               TextColor="White" />
+        <Label x:Name="GeolocationLabel"
+               Text="Coordonnées : ..."
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="20"
+               TextColor="White"/>
+        <Button Text="Obtenir la position"
+                BackgroundColor="#FFDD57"
+                TextColor="White"
+                Clicked="OnGeolocationClicked"/>
+    </StackLayout>
+</ContentPage>
