@@ -1,13 +1,37 @@
 ﻿using Microsoft.Maui.Controls;
+using Plugin.Maui.Audio;  
+using System;
+
 namespace CLAMMO_PanneauSolaire
 {
     public partial class App : Application
     {
-        public App()
+        private readonly IAudioManager _audioManager;  // Gestionnaire audio
+
+        public App(IAudioManager audioManager)  // Injecter IAudioManager
         {
             InitializeComponent();
+            _audioManager = audioManager;
+
             MainPage = new AppShell();
             AddGeoLocationButton();
+
+            PlayStartupSound();  // Jouer l'audio au démarrage
+        }
+
+        private async void PlayStartupSound()
+        {
+            try
+            {
+                // Charger le fichier audio
+                var player = _audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("NOUVEAUJINGLENETFLIX.mp3"));
+                // Jouer l'audio
+                player.Play();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la lecture de l'audio : {ex.Message}");
+            }
         }
 
         private void AddGeoLocationButton()
@@ -26,11 +50,10 @@ namespace CLAMMO_PanneauSolaire
 
             geoButton.Clicked += async (sender, e) =>
             {
-          
-                await Shell.Current.GoToAsync("//GeolocationPage"); 
+                await Shell.Current.GoToAsync("//GeolocationPage");
             };
 
-           
+            
         }
     }
 }
