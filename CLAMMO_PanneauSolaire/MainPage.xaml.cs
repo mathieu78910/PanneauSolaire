@@ -41,6 +41,7 @@
                     var data = e.Reading;
                     double heading = Math.Round(data.HeadingMagneticNorth, 0);
                     CompassLabel.Text = $"Direction: {heading}°";
+                    CompassImage.Rotation = -heading;
                 };
                 Compass.Start(SensorSpeed.UI);
                 Console.WriteLine("Compass started.");
