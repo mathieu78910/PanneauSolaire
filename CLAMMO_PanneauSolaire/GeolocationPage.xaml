@@ -18,6 +18,7 @@
         <Button Text="Obtenir la position"
                 BackgroundColor="#FFDD57"
                 TextColor="White"
+                CornerRadius="20"
                 Clicked="OnGeolocationClicked"/>
     </StackLayout>
 </ContentPage>
