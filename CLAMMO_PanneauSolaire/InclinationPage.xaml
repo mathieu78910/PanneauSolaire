@@ -4,6 +4,7 @@
              x:Class="CLAMMO_PanneauSolaire.InclinationPage"
              Title="Inclinaison"
              BackgroundColor="#282b30">
+    
     <StackLayout Padding="20">
         <Label Text="Inclinaison du panneau"
                FontSize="22"
@@ -15,9 +16,10 @@
                HorizontalOptions="Center"
                Margin="20"
                TextColor="White"/>
-        <Button Text="Obtenir inclinaison"
+        <Button Text="Obtenir l'inclinaison"
                 BackgroundColor="#03A9F4"
                 TextColor="White"
+                CornerRadius="20"
                 Clicked="OnInclinationClicked"/>
     </StackLayout>
 </ContentPage>

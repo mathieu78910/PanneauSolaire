@@ -13,7 +13,9 @@ namespace CLAMMO_PanneauSolaire
             Compass.ReadingChanged += (s, args) =>
             {
                 var data = args.Reading;
-                CompassLabel.Text = $"Direction: {data.HeadingMagneticNorth}°";
+                double heading = Math.Round(data.HeadingMagneticNorth);
+                CompassLabel.Text = $"Direction: {heading}°";
+                CompassImage.Rotation = -heading;
             };
             Compass.Start(SensorSpeed.UI);
         }

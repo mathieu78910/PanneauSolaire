@@ -5,10 +5,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CLAMMO_PanneauSolaire"
     Shell.FlyoutBehavior="Disabled"
-    Title="CLAMMO_PanneauSolaire">
+    Title="CLAMMO_PanneauSolaire"
+    TitleColor="White">
+    
+    <TabBar>
+        <Tab Title="Géolocalisation"
+            Icon="localisation"/>
+            <ShellContent ContentTemplate="{DataTemplate local:GeolocationPage}" />
 
-    <ShellContent
-        Title="Sensors Result"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        <Tab Title="Inclinaison"
+            Icon="tilt"/>
+            <ShellContent ContentTemplate="{DataTemplate local:InclinationPage}" />
+        <Tab/>
+        <Tab Title="Boussole"
+            Icon="boussole"/>
+            <ShellContent ContentTemplate="{DataTemplate local:CompassPage}" />
+        <Tab/>
+    </TabBar>
 </Shell>

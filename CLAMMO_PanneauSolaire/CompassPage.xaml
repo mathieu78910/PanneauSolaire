@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CLAMMO_PanneauSolaire.CompassPage"
-             Title="Compas"
+             Title="Boussole"
              BackgroundColor="#282b30">
     <StackLayout Padding="20">
         <Label Text="Direction en temps réel"
@@ -15,10 +15,17 @@
        HorizontalOptions="Center" 
        Margin="20" 
        TextColor="White"/>
- 
+        <Image 
+            x:Name="CompassImage"
+            Source="Resources/Images/compass"
+               WidthRequest="200"
+               HeightRequest="200"
+               Aspect="AspectFit"
+               Rotation="90"/>
         <Button Text="Activer le compas"
                 BackgroundColor="#4CAF50"
                 TextColor="White"
+                CornerRadius="20"
                 Clicked="OnCompassClicked"/>
     </StackLayout>
 </ContentPage>
