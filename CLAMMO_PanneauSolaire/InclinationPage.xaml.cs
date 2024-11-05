@@ -4,7 +4,7 @@ namespace CLAMMO_PanneauSolaire
 {
     public partial class InclinationPage : ContentPage
     {
-        private Label _inclinationLabel;
+        private bool isAccelerometerActive = false; // Suivi de l'état de l'accéléromètre
 
         public InclinationPage()
         {
@@ -13,16 +13,35 @@ namespace CLAMMO_PanneauSolaire
 
         private void OnInclinationClicked(object sender, EventArgs e)
         {
-            Accelerometer.ReadingChanged += (s, args) =>
+            if (!isAccelerometerActive)
             {
-                var data = args.Reading;
-                double inclination = Math.Round(data.Acceleration.Z * 90);
-                InclinationLabel.Text = $"Inclinaison: {inclination}°";            };
-            Accelerometer.Start(SensorSpeed.UI); 
+                // Démarre l'accéléromètre
+                Accelerometer.ReadingChanged += OnAccelerometerReadingChanged;
+                Accelerometer.Start(SensorSpeed.UI);
+
+                // Met à jour l'état
+                isAccelerometerActive = true;
+                ((Button)sender).Text = "Arrêter l'inclinaison";
+                ((Button)sender).BackgroundColor = Colors.Red;
+            }
+            else
+            {
+                // Arrête l'accéléromètre
+                Accelerometer.ReadingChanged -= OnAccelerometerReadingChanged;
+                Accelerometer.Stop();
+
+                // Met à jour l'état
+                isAccelerometerActive = false;
+                ((Button)sender).Text = "Activer l'inclinaison";
+                ((Button)sender).BackgroundColor = Color.FromArgb("#4CAF50");
+            }
         }
-        private void OnStopListeningClicked(object sender, EventArgs e)
+
+        private void OnAccelerometerReadingChanged(object sender, AccelerometerChangedEventArgs args)
         {
-            Accelerometer.Stop();
+            var data = args.Reading;
+            double inclination = Math.Round(data.Acceleration.Z * 90);
+            InclinationLabel.Text = $"Inclinaison: {inclination}°";
         }
     }
 }
