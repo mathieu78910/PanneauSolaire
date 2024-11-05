@@ -17,10 +17,11 @@
        TextColor="White"/>
         <Image 
             x:Name="CompassImage"
-            Source="Resources/Images/compass"
-               WidthRequest="200"
-               HeightRequest="200"
+            Source="Resources/Images/boussolle.png"
+               WidthRequest="300"
+               HeightRequest="300"
                Aspect="AspectFit"
+            Margin="20"
                Rotation="90"/>
         <Button Text="Activer le compas"
                 BackgroundColor="#4CAF50"
