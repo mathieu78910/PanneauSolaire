@@ -6,9 +6,9 @@
              BackgroundColor="#282b30">
     <StackLayout Padding="20">
         <Label Text="Géolocalisation en temps réel"
-               FontSize="22"
-               HorizontalOptions="Center"
-               TextColor="White" />
+                       FontSize="22"
+                       HorizontalOptions="Center"
+                       TextColor="White" />
         <Label x:Name="GeolocationLabel"
                Text="Coordonnées : ..."
                FontSize="18"
