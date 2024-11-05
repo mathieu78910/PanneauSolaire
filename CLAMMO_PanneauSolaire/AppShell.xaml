@@ -21,5 +21,9 @@
             Icon="boussole"/>
             <ShellContent ContentTemplate="{DataTemplate local:CompassPage}" />
         <Tab/>
+        <Tab Title="Calera"
+            Icon="boussole"/>
+        <ShellContent ContentTemplate="{DataTemplate local:TensorFlowModelPage}" />
+        <Tab/>
     </TabBar>
 </Shell>
