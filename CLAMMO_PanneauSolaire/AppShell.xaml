@@ -8,28 +8,21 @@
     Title="CLAMMO_PanneauSolaire"
     TitleColor="White">
     <TabBar>
-        <Tab Title="Géolocalisation" Icon="localisation.png">
-            <ShellContent ContentTemplate="{DataTemplate local:GeolocationPage}" Route="GeolocalisationPage"/>
-        </Tab>
-        <Tab Title="Inclinaison" Icon="Images/tilt.png">
-            <ShellContent ContentTemplate="{DataTemplate local:InclinationPage}" Route="InclinationPage"/>
-        </Tab>
-        <Tab Title="Boussole" Icon="Ressources/Images/boussole.png">
-            <ShellContent ContentTemplate="{DataTemplate local:CompassPage}" Route="CompassPage"/>
-        </Tab></TabBar>
-    <ShellContent 
-        Title="Géolocalisation"
-        Icon="localisation.png"
-        ContentTemplate="{DataTemplate local:GeolocationPage}"
-        Route="GeolocalisationPage"/>
-     <ShellContent
-         Title="Inclinaison"
-         Icon="Images/tilt.png"
-         ContentTemplate="{DataTemplate local:InclinationPage}"
-         Route="InclinationPage"/>
-    <ShellContent
-        Title="Boussole"
-        Icon="Ressources/Images/boussole.png"
-        ContentTemplate="{DataTemplate local:CompassPage}" 
-        Route="CompassPage"/>
+        <Tab Title="Géolocalisation"
+            Icon="localisation"/>
+            <ShellContent ContentTemplate="{DataTemplate local:GeolocationPage}" />
+
+        <Tab Title="Inclinaison"
+            Icon="tilt"/>
+            <ShellContent ContentTemplate="{DataTemplate local:InclinationPage}" />
+        <Tab/>
+        <Tab Title="Boussole"
+            Icon="boussole"/>
+            <ShellContent ContentTemplate="{DataTemplate local:CompassPage}" />
+        <Tab/>
+        <Tab Title="Calera"
+            Icon="boussole"/>
+        <ShellContent ContentTemplate="{DataTemplate local:TensorFlowModelPage}" />
+        <Tab/>
+    </TabBar>
 </Shell>

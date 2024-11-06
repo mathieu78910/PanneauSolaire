@@ -1,0 +1,24 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CLAMMO_PanneauSolaire.TensorFlowModelPage"
+             BackgroundColor="Black"
+             Title="Caméra">
+
+    <Grid>
+
+
+        <StackLayout VerticalOptions="End" Padding="10">
+            <Label x:Name="CameraLabel"
+                   Text="Allumer la caméra"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="20" />
+
+            <Button Text="Allumer la caméra"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="#03A9F4"
+                    TextColor="White"
+                    CornerRadius="20" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
