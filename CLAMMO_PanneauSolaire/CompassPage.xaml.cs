@@ -48,7 +48,7 @@
             else
             {
                 CompassLabel.Text = $"Direction: {heading}°";
-                CompassLabel.TextColor = Colors.Black;
+                CompassLabel.TextColor = Colors.White;
             }
             CompassImage.Rotation = -heading;
         }

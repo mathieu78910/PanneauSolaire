@@ -20,9 +20,8 @@
             Source="Resources/Images/boussolle.png"
                WidthRequest="300"
                HeightRequest="300"
-               Aspect="AspectFit"
-            Margin="20"
-               Rotation="90"/>
+            Margin="0,40,0,80"
+               Aspect="AspectFit"/>
         <Button Text="Activer le compas"
                 BackgroundColor="#4CAF50"
                 TextColor="White"

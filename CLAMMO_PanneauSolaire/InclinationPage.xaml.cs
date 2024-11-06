@@ -41,7 +41,17 @@ namespace CLAMMO_PanneauSolaire
         {
             var data = args.Reading;
             double inclination = Math.Round(data.Acceleration.Z * 90);
-            InclinationLabel.Text = $"Inclinaison: {inclination}°";
+            inclination = inclination < 0 ? -inclination : inclination;
+            if (inclination >50 && inclination <70)
+            {
+                InclinationLabel.Text = $"{inclination}°";
+                InclinationLabel.TextColor = Colors.Green;
+            }
+            else
+            {
+                InclinationLabel.Text = $"{inclination}°";
+                InclinationLabel.TextColor = Colors.White;
+            }
         }
     }
 }

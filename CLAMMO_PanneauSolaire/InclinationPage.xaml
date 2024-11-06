@@ -5,20 +5,22 @@
              Title="Inclinaison"
              BackgroundColor="#282b30">
     
-    <StackLayout Padding="20">
+    <StackLayout>
         <Label Text="Inclinaison du panneau"
                FontSize="22"
+               Margin ="0,20,0,0"
                HorizontalOptions="Center"
                TextColor="White" />
         <Label x:Name="InclinationLabel"
-               Text="Inclinaison : ..."
-               FontSize="18"
+               Text="??°"
+               FontSize="150"
                HorizontalOptions="Center"
-               Margin="20"
+               Margin="0,150,0,130"
                TextColor="White"/>
         <Button Text="Obtenir l'inclinaison"
                 BackgroundColor="#03A9F4"
                 TextColor="White"
+                Margin="20,0,20,50"
                 CornerRadius="20"
                 Clicked="OnInclinationClicked"/>
     </StackLayout>
